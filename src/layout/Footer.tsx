@@ -16,9 +16,9 @@ import * as React from 'react'
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 const content = {
-  contactText:'Get In Touch!',
+  contactText:'Get In Touch',
   contactButton: 'Contact',
-  tagLine: 'Build Better Software!',
+  tagLine: 'Build Better Software',
   nav: [
     {
       title: 'Home',

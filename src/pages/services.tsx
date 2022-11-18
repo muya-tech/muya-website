@@ -12,7 +12,7 @@ import { MdBabyChangingStation, MdLocalHospital, MdOutlineSchool, MdOutlineDesig
 
 const content = {
   heroTitle: 'How can we help?',
-  heroDescription: 'Let us help you unlock more value and impact from your digital services!',
+  heroDescription: 'Let us help you unlock more value and impact from your digital services.',
   sections: [       
     {
       title: 'Services',
@@ -70,7 +70,7 @@ const content = {
       ]  
     },
     {
-      title: 'Let\'s Build Together!',
+      title: 'Let\'s Build Together',
       customId: 'work-with-us',
       backgroundColor: 'orange.300',
     }

@@ -6,7 +6,7 @@ import Hero from "../layout/Hero"
 import Section from "../layout/Section"
 
 const content = {
-  heroTitle: 'Let’s Chat!',
+  heroTitle: 'Let’s Connect',
   heroDescription: 'We’d love to hear from you! We’ll start with the problem you’re trying to solve and go from there.',
 }
 

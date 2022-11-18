@@ -17,7 +17,7 @@ const IndexPage: React.FC<PageProps> = () => {
         title={content.heroTitle}
         description={content.heroDescription}
       />
-      <Section title="Join the team!" backgroundColor="blue.700" fontColor="white">
+      <Section title="Join the team." backgroundColor="blue.700" fontColor="white">
         <Stack align="start" spacing="4">
           <Button variant="link" fontSize={{ base: '2xl', md: '2xl' }} color="white" textDecoration="underline" as={Link} isExternal href="https://guiltless-jellyfish-358.notion.site/Focus-Consulting-Interview-Process-Fullstack-Engineer-fe06d8e8be854f38b466b6278ae82772">Hiring Process</Button>
           <Button variant="link" fontSize={{ base: '2xl', md: '2xl' }} color="white" textDecoration="underline" as={Link} isExternal href="https://angel.co/company/focus-consulting-1/jobs">View Open Positions</Button>

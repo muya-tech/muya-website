@@ -87,7 +87,7 @@ const content = {
         },
         {
             title: 'Core Team',
-            description: 'Meet our diverse team of technologists!',
+            description: 'Meet our diverse team of technologists.',
             customId: 'team',
         },
     ],
@@ -126,18 +126,18 @@ const team = [
         title: 'Recruiting',
     },
     {
+      name: 'Bruk Abebe',
+      title: 'Software Engineer',
+      photo: '/images/staff/bruk-abebe.jpg',
+    },
+    {
         name: 'Eric Opoku',
         title: 'Software Engineer',
     },
     {
         name: 'Kevon Paynter',
         title: 'Product Manager',
-    },
-    {
-        name: 'Bruk Abebe',
-        title: 'Software Engineer',
-        photo: '/images/staff/bruk-abebe.jpg',
-    },
+    },    
     {
         name: 'Mike Liu',
         title: 'Software Engineer',
@@ -184,7 +184,7 @@ const AboutPage: React.FC<PageProps> = () => {
                         as={Link}
                         to="/careers"
                     >
-                        Join the Team!
+                        Join the Team
                     </Button>
                 </Box>
             )
