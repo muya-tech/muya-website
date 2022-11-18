@@ -61,7 +61,7 @@ const content = {
                         'We center our work on human-centered design and research to gain deep insights into user challenges and needs. We use user research and testing before and after feature launches to gain insights and make our work more valuable.',
                 },
                 {
-                    title: 'Date Engineering',
+                    title: 'Data Engineering',
                     description:
                         'Our teams have strong experience processing, transforming, integrating, and synthesizing large volumes of diverse data sets. We have a depth of experience working with healthcare data across government, insurers, and hospitals.',
                 },
@@ -136,6 +136,7 @@ const team = [
     {
         name: 'Bruk Abebe',
         title: 'Software Engineer',
+        photo: '/images/staff/bruk-abebe.jpg',
     },
     {
         name: 'Mike Liu',
