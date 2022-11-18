@@ -8,6 +8,7 @@ import {
   HStack,
   IconButton,
   Text,
+  Menu, MenuButton, MenuGroup, MenuItem, MenuList,
   useBreakpointValue,
   useColorModeValue,
 } from '@chakra-ui/react'
@@ -61,11 +62,14 @@ const Header = () => {
                 })}
               </ButtonGroup>
             ) : (
-              <IconButton
-                variant="ghost"
-                icon={<FiMenu fontSize="1.25rem" />}
-                aria-label="Open Menu"
-              />
+              <Menu closeOnSelect={true}>
+                <MenuButton as={IconButton} variant="ghost" color="black" size="sm" cursor="pointer" fontSize="3xl" icon={<FiMenu /> } />
+                <MenuList minW='240px' color="black">
+                  <MenuGroup>
+                    {content.nav.map(navLink => <MenuItem as={Link} to={navLink.path}>{navLink.title}</MenuItem>)}
+                  </MenuGroup>
+                </MenuList>      
+              </Menu>
             )}
           </HStack>
         </Container>

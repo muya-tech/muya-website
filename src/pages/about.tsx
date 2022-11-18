@@ -1,5 +1,5 @@
 import * as React from "react"
-import type { HeadFC, PageProps } from "gatsby"
+import { HeadFC, Link, PageProps } from "gatsby"
 import { Avatar, SimpleGrid, Box, Text, Button } from '@chakra-ui/react'
 import Layout from "../layout/Layout"
 import Hero from "../layout/Hero"
@@ -12,12 +12,13 @@ const content = {
   sections: [
     {
       title: 'Our Story',
-      description: 'Focus was founded in 2019 to a deep set of industry experiences and bring best-in-class digital services capabilities in full-stack software development, human-centered design, and DevSecOps.',
+      description: 'Focus was founded in 2019 to bring together a diverse set of industry and government experiences, and best-in-class digital services capabilities in agile software development, human-centered design, and DevSecOps. Our projects span work that addresses equity, healthcare, benefits, and learning across government and commercial clients.',
       backgroundColor: 'blue.700',
       fontColor: 'white',
     },
     {
       title: 'Core Values',
+      description: 'Our values guide both how we work with our colleagues and how we view our partnerships.',
       items: [
         {
           title: 'Clarity and transparency',
@@ -25,46 +26,52 @@ const content = {
         },
         {
           title: 'Do the right thing',
-          description: 'We always come prepared, researching and documenting before raising topics with our clients.  We respect our client’s time and communications by asking questions that get to the root of things.',
+          description: 'We always come prepared, researching and documenting before raising topics with our clients.  We respect our clients\' time by asking questions that get to the root of things faster. ',
         },
         {
           title: 'Do what you say',
-          description: 'Our reputation with our client’s is critical to our success as a business and that reputation is built by consistently delivering on what we promise to do.',
+          description: 'Our reputation with our clients is critical to our success as a business and that reputation is built by consistently delivering on what we promise to do.',
         },
         {
           title: 'Exhibit a growth mindset',
-          description: 'The industry is constantly evolving and in order to stay relevant we need to constantly grow our skill sets to serve current and future clients.',
+          description: 'The industry is constantly evolving, and in order to stay relevant we constantly grow our skill sets to serve current and future clients.',
         },
       ]
     },
     {
-      title: 'Expertise',
+      title: 'Expertise',      
       items: [
         {
           title: 'Software Engineering',
-          description: 'Say something here',
-        },
-        {
-          title: 'Date Engineering',
-          description: 'Say something here',
-        },
-        {
-          title: 'Cloud Infrastructure',
-          description: 'Say something here',
-        },
-        {
-          title: 'Program & Product Management',
-          description: 'Say something here',
+          description: 'We bring deep expertise in full-stack web development using agile development processes. Our staff have successfully built and maintained high complexity applications serving millions of users.',
         },
         {
           title: 'Research & Design ',
-          description: 'Say something here',
+          description: 'We center our work on human-centered design and research to gain deep insights into user challenges and needs. We use user research and testing before and after feature launches to gain insights and make our work more valuable.',
         },
+        {
+          title: 'Date Engineering',
+          description: 'Our teams have strong experience processing, transforming, integrating, and synthesizing large volumes of diverse data sets. We have a depth of experience working with healthcare data across government, insurers, and hospitals.',
+        },
+        {
+          title: 'Product Management',
+          description: 'Our product managers work with their design and research colleagues to understand customer needs, work with our stakeholders, and craft high value solutions. We make data-driven product decisions by defining and tracking success metrics within an agile development approach.',
+        },        
+        {
+          title: 'DevOps & Cloud Infrastructure',
+          description: 'We develop and improve robust CI/CD processes that free up developers to focus on providing user value, accessibility, and privacy. We work across the cloud ecosystem (AWS, Azure, Google Cloud). We use infrastructure as code approach to consistently define our cloud resources with automated deploys.'
+        },
+        {
+          title: 'Project & Program Management',
+          description: 'Our project managers tie everything together by supporting our planning, stakeholder coordination, and delivery work. We use strong documentation and communication practices to work efficiently in an increasingly distributed world.',
+        },               
       ],
-      backgroundColor: 'orange.100',
+      backgroundColor: 'orange.300',
+      customId: 'expertise',
+      anchor: 'expertise',
     },
     {
-      title: 'Team',  
+      title: 'Core Team',  
       description: 'Meet our diverse team of technologists!',    
       customId: 'team',
     }
@@ -73,28 +80,50 @@ const content = {
 
 const team = [
   {
-    name: 'Ant Addis',
-    title: 'CEO',
-  },
-  {
-    name: 'Michael Kalish',
-    title: 'CTO',
+    name: 'Eyuel Abebe',
+    title: 'Software Engineer',
   },
   {
     name: 'Ant Addis',
     title: 'CEO',
+    photo: '../images/staff/anteneh-3.jpg',
+  },  
+  {
+    name: 'Kolawole Balegun',
+    title: 'Software Engineer',
+  },
+  {
+    name: 'Iverson Diles',
+    title: 'Software Engineer',
+  },
+  {
+    name: 'Sid Hackney',
+    title: 'Software Engineer',
   },
   {
     name: 'Michael Kalish',
     title: 'CTO',
+    photo: '../images/staff/kalish-profile.png',
   },
   {
-    name: 'Ant Addis',
-    title: 'CEO',
+    name: 'Bethlehem Mulugeta',
+    title: 'Recruiting',
   },
   {
-    name: 'Michael Kalish',
-    title: 'CTO',
+    name: 'Eric Opoku',
+    title: 'Software Engineer',
+  },
+  {
+    name: 'Kevon Paynter',
+    title: 'Product Manager',
+  },
+  {
+    name: 'Bruk Abebe',
+    title: 'Software Engineer',
+  },  
+  {
+    name: 'Mike Liu',
+    title: 'Software Engineer',
   },
 ]
 
@@ -103,21 +132,26 @@ const AboutPage: React.FC<PageProps> = () => {
     'team': () => {
       return (        
         <Box>          
-          <SimpleGrid columns={{ base: 2, md: 5 }} mb={{ base: 4, md: 12 }} spacing="10">
+          <SimpleGrid columns={{ base: 2, md: 4 }} mb={{ base: 12, md: 12 }} spacing="10">
             { team.map(person => {
               return (
                 <Box>
-                  <Avatar name={person.name} size={{ base: 'xl', md: '2xl' }} mb={2} src='https://bit.ly/sage-adebayo' />
-                  <Text fontSize="2xl" fontWeight="semibold" mb={1}>{person.name}</Text>
-                  <Text fontSize="xl">{person.title}</Text>
+                  <Avatar name={person.name} size={{ base: 'xl', md: '2xl' }} mb={2} src={person.photo} />
+                  <Text fontSize={{ base: 'xl', md: '2xl' }} fontWeight="semibold" mb={1}>{person.name}</Text>
+                  <Text fontSize={{ base: 'lg', md: 'xl' }}>{person.title}</Text>
                 </Box>
               )
             })}
           </SimpleGrid>          
-          <Button variant="solid" fontSize="2xl" colorScheme="blue">Join the Team!</Button>
+          <Button variant="solid" fontSize={{ base: '2xl', md: '2xl' }} colorScheme="blue" as={Link} to="/careers">Join the Team!</Button>
         </Box>
       )
-    }
+    },
+    'expertise': () => {
+      return (
+        <Button variant="solid" fontSize={{ base: '2xl', md: '2xl' }} colorScheme="blue" as={Link} to="/our-work">See Examples of Our Work</Button>
+      )
+    },
   }
 
   return (
@@ -134,25 +168,12 @@ const AboutPage: React.FC<PageProps> = () => {
             backgroundColor={section.backgroundColor}
             fontColor={section.fontColor}
             items={section.items}
+            anchor={section.anchor}
           >
             {section.customId && customRenderMap[section.customId]()}
           </Section>
         )
       })}
-      {/* <Section
-        title={content.ourStoryTitle}
-        description={content.ourStoryDescription}
-        backgroundColor="blue.700"
-        fontColor="white"
-      > 
-      </Section>
-      <Section
-        title={content.valuesTitle}
-      > 
-        <Box width={{ base: '100%', md: '75%' }}>
-          {values}
-        </Box>        
-      </Section> */}
     </Layout>
   )
 }

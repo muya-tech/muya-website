@@ -4,7 +4,7 @@ import {
   ButtonGroup,
   Container,
   SimpleGrid,
-  HStack,
+  Stack,
   IconButton,
   Text,
   useBreakpointValue,
@@ -17,16 +17,19 @@ import { Icon } from '@chakra-ui/react'
 interface MainProps {
   title: string,
   description?: string,
-  items?: { title: string, description: string, icon? : any }[], 
+  items?: { title: string, description: string, icon? : any, iconColor?: string }[], 
   backgroundColor?: string,
   fontColor?: string,
+  anchor?: string,
   children: any,
 }
 
-const Section = ({ title, description, items, backgroundColor, fontColor, children }: MainProps) => {
+const Section = ({ title, description, items, backgroundColor, fontColor, anchor, children }: MainProps) => {
   const props: any = {}
+
   if (backgroundColor) props['bg'] = backgroundColor;
   if (fontColor) props['color'] = fontColor;
+  if (anchor) props['id'] = anchor;
   
   const renderItems = () => {
     if (items === undefined || items.length === 0) {
@@ -39,10 +42,16 @@ const Section = ({ title, description, items, backgroundColor, fontColor, childr
       return (
         <Box>
           {value.icon && (
-            <Box mb={{ base: 1, md: 1 }}><Icon as={value.icon} boxSize={9} color={iconColor} /></Box>
+            <Box mb={{ base: 1, md: 1 }}><Icon as={value.icon} boxSize={{ base: 9, md: 9 }} color={value.iconColor || iconColor} /></Box>
           )}
           <Heading fontSize={{ 'base': '3xl', 'md': '3xl' }} fontWeight="semibold" mb={2}>{value.title}</Heading>
-          <Text fontSize="xl">{value.description}</Text>
+          {Array.isArray(value.description) ? (
+            <Stack direction="column" spacing={{ base: 6, md: 6 }}>
+              {value.description.map(paragraph => (<Text fontSize="xl">{paragraph}</Text>))}
+            </Stack>
+          ) : (
+            <Text fontSize="xl">{value.description}</Text>
+          )}          
         </Box>      
       );
     });
@@ -57,14 +66,18 @@ const Section = ({ title, description, items, backgroundColor, fontColor, childr
       <Container maxW="6xl" px={{ base: 5, md: 0 }}>
         <Box width={{ base: '100%', md: '75%' }} mb={{ base: 8, md: 12}}>
           <Heading fontSize={{ base: '4xl', md: '5xl' }} fontWeight="extrabold" mb={{ base: 1, md: 2}}>{title}</Heading>
-          {description && <Text fontSize={{ base: 'lg', md: 'xl' }}>{description}</Text>}          
+          {description && <Text fontSize={{ base: 'lg', md: 'xl' }} color="muted">{description}</Text>}          
         </Box>
         {items && (
-          <SimpleGrid columns={{ base: 1, md: 2 }} spacing={16}>
-            {renderItems()}
-          </SimpleGrid>
+          <Box mb={{ base: 8, md: 12}}>
+            <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 8, md: 16 }}>
+              {renderItems()}
+            </SimpleGrid>
+          </Box>          
         )}
-        {children}
+        <Box mb={{ base: 8, md: 12}}>
+          {children}
+        </Box>        
       </Container>
     </Box>
   )

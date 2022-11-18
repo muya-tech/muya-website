@@ -95,12 +95,11 @@ const Footer = () => {
             <ButtonGroup variant="ghost">
               <IconButton
                 as="a"
-                href="#"
+                href="https://www.linkedin.com/company/35654054/admin/"
+                target="_blank"
                 aria-label="LinkedIn"
                 icon={<FaLinkedin fontSize="1.25rem" />}
               />
-              <IconButton as="a" href="#" aria-label="GitHub" icon={<FaGithub fontSize="1.25rem" />} />
-              <IconButton as="a" href="#" aria-label="Twitter" icon={<FaTwitter fontSize="1.25rem" />} />
             </ButtonGroup>        
           </Stack>
           <Stack spacing={{ base: 1, md: 2 }} align="start">

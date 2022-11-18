@@ -9,7 +9,7 @@ const content = {
   heroTitle: 'Build Better Software',
   heroDescription: 'We help government and industry partners build human-centered, high value, and highly maintainable digital services at scale.',
   sectionTitle: 'Human-Centered, Focused on Value',
-  sectionDescription: 'We focus our work on identifying user needs, improving usability and delivering valuable outcomes for our clients.',
+  sectionDescription: 'We focus our work on identifying user needs, improving usability, and delivering valuable outcomes for our clients.',
   nav: [
     {
       title: 'About Us',
