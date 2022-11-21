@@ -106,7 +106,7 @@ const team = [
     {
         name: 'Kolawole Balegun',
         title: 'Software Engineer',
-        photo: '/images/staff/kola.jpeg',
+        photo: '/images/staff/kola.png',
     },
     {
         name: 'Iverson Diles',
@@ -127,9 +127,9 @@ const team = [
         title: 'Recruiting',
     },
     {
-      name: 'Bruk Abebe',
-      title: 'Software Engineer',
-      photo: '/images/staff/bruk-abebe.jpg',
+        name: 'Bruk Abebe',
+        title: 'Software Engineer',
+        photo: '/images/staff/bruk-abebe.jpg',
     },
     {
         name: 'Eric Opoku',
@@ -138,7 +138,7 @@ const team = [
     {
         name: 'Kevon Paynter',
         title: 'Product Manager',
-    },    
+    },
     {
         name: 'Mike Liu',
         title: 'Software Engineer',
