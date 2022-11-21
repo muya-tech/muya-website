@@ -106,6 +106,7 @@ const team = [
     {
         name: 'Kolawole Balegun',
         title: 'Software Engineer',
+        photo: '/images/staff/kola.jpeg',
     },
     {
         name: 'Iverson Diles',
