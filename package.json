@@ -36,6 +36,8 @@
     "@types/react-dom": "^18.0.8",
     "gatsby-plugin-manifest": "^5.0.0",
     "gatsby-plugin-sitemap": "^6.1.0",
+    "gatsby-source-filesystem": "^5.1.0",
+    "gatsby-transformer-gitinfo": "^1.1.0",
     "gh-pages": "^4.0.0",
     "typescript": "^4.8.4"
   }

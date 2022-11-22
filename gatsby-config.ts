@@ -1,7 +1,5 @@
 import type { GatsbyConfig } from 'gatsby'
 
-const siteUrl = process.env.URL || `https://focusconsulting.io`
-
 const config: GatsbyConfig = {
     siteMetadata: {
         title: `Focus - Build Better Software`,
@@ -42,49 +40,56 @@ const config: GatsbyConfig = {
             },
         },
         {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                name: 'pages',
+                path: './src/pages/',
+            },
+        },
+        `gatsby-transformer-gitinfo`,
+        {
             resolve: 'gatsby-plugin-sitemap',
             options: {
-                query: `
-              {
-                allSitePage {
-                  nodes {
-                    path
-                  }
-                }
-                allWpContentNode(filter: {nodeType: {in: ["Post", "Page"]}}) {
-                  nodes {
-                    ... on WpPost {
-                      uri
-                      modifiedGmt
+                query: `{
+                    site {
+                      siteMetadata {
+                        siteUrl
+                      }
                     }
-                    ... on WpPage {
-                      uri
-                      modifiedGmt
+                    allSitePage {
+                      nodes {
+                        path
+                      }
                     }
-                  }
-                }
-              }
-            `,
-                resolveSiteUrl: () => siteUrl,
+                    allFile(filter: {sourceInstanceName: {eq: "pages"}}) {
+                      edges {
+                        node {
+                          fields {
+                            gitLogLatestDate
+                          }
+                          name
+                        }
+                      }
+                    }
+                  }`,
                 resolvePages: ({
-                    allSitePage: { nodes: allPages },
-                    allWpContentNode: { nodes: allWpNodes },
+                    allSitePage: { nodes: sitePages },
+                    allFile: { edges: pageFiles },
                 }) => {
-                    const wpNodeMap = allWpNodes.reduce((acc, node) => {
-                        const { uri } = node
-                        acc[uri] = node
+                    return sitePages.map((page) => {
+                        const pageFile = pageFiles.find(({ node }) => {
+                            const fileName =
+                                node.name === 'index' ? '/' : `/${node.name}/`
+                            return page.path === fileName
+                        })
 
-                        return acc
-                    }, {})
-
-                    return allPages.map((page) => {
-                        return { ...page, ...wpNodeMap[page.path] }
+                        return { ...page, ...pageFile?.node?.fields }
                     })
                 },
-                serialize: ({ path, modifiedGmt }) => {
+                serialize: ({ path, gitLogLatestDate }) => {
                     return {
                         url: path,
-                        lastmod: modifiedGmt,
+                        lastmod: gitLogLatestDate,
                     }
                 },
             },
