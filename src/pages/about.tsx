@@ -5,6 +5,7 @@ import { HeadFC, Link, PageProps } from 'gatsby'
 
 import Hero from '../layout/Hero'
 import Layout from '../layout/Layout'
+import { SEO } from '../components/seo'
 import Section from '../layout/Section'
 import { VscWorkspaceTrusted } from 'react-icons/vsc'
 
@@ -232,4 +233,4 @@ const AboutPage: React.FC<PageProps> = () => {
 
 export default AboutPage
 
-export const Head: HeadFC = () => <title>Home Page</title>
+export const Head: HeadFC = () => <SEO title="Focus - About" />
