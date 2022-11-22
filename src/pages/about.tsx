@@ -117,6 +117,7 @@ const team = [
     {
         name: 'Sid Hackney',
         title: 'Software Engineer',
+        photo: '/images/staff/sid.jpeg',
     },
     {
         name: 'Michael Kalish',
@@ -139,6 +140,7 @@ const team = [
     {
         name: 'Kevon Paynter',
         title: 'Product Manager',
+        photo: '/images/staff/kevon.jpg',
     },
     {
         name: 'Mike Liu',
