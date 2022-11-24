@@ -69,19 +69,19 @@ const projects = [
   {
     title: 'DC Housing Insights',
     tags: ['Equity'],
-    description: 'Focus was part of the initial core team at project kickoff, and worked with our prime contracting partner (Nava) and other stakeholders to staff project teams across product, engineering, cloud infrastructure and operational/technical support.',
+    description: 'This open source tool provides housing advocates and government officials with insights on the state of affordable housing in Washington, DC. The project started as a Code for DC / CNHED / Greater DC initiative. The tool overlays multiple local and national data sources on top of an interactive map with various filter toggles to better visualize the data.',
     link: 'http://housinginsights.org/#',
   },
   {
     title: 'Marriott Learning Platform',
     tags: ['Learning & Development'],
-    description: 'Focus was part of the initial core team at project kickoff, and worked with our prime contracting partner (Nava) and other stakeholders to staff project teams across product, engineering, cloud infrastructure and operational/technical support.',
+    description: 'We built regional and organization wide internal learning and development platforms that emphasized up-skilling and competency based career growth for staff.',
     link: 'https://www.marriott-ld.com/mda',
   },
   {
     title: 'Skills-Based Talent Platform',
     tags: ['Learning & Development'],
-    description: 'Focus was part of the initial core team at project kickoff, and worked with our prime contracting partner (Nava) and other stakeholders to staff project teams across product, engineering, cloud infrastructure and operational/technical support.',
+    description: 'Building a next generation talent marketplace platform that uses well defined and industry aligned job competency maps to more accurately match job seekers with employers.',
     link: 'https://aspireability.io/',
   },
 ];
