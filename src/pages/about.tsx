@@ -5,6 +5,7 @@ import { HeadFC, Link, PageProps } from 'gatsby'
 
 import Hero from '../layout/Hero'
 import Layout from '../layout/Layout'
+import { SEO } from '../components/seo'
 import Section from '../layout/Section'
 import { VscWorkspaceTrusted } from 'react-icons/vsc'
 
@@ -106,6 +107,7 @@ const team = [
     {
         name: 'Kolawole Balegun',
         title: 'Software Engineer',
+        photo: '/images/staff/kola.png',
     },
     {
         name: 'Iverson Diles',
@@ -115,6 +117,7 @@ const team = [
     {
         name: 'Sid Hackney',
         title: 'Software Engineer',
+        photo: '/images/staff/sid.jpeg',
     },
     {
         name: 'Michael Kalish',
@@ -126,9 +129,9 @@ const team = [
         title: 'Recruiting',
     },
     {
-      name: 'Bruk Abebe',
-      title: 'Software Engineer',
-      photo: '/images/staff/bruk-abebe.jpg',
+        name: 'Bruk Abebe',
+        title: 'Software Engineer',
+        photo: '/images/staff/bruk-abebe.jpg',
     },
     {
         name: 'Eric Opoku',
@@ -137,7 +140,8 @@ const team = [
     {
         name: 'Kevon Paynter',
         title: 'Product Manager',
-    },    
+        photo: '/images/staff/kevon.jpg',
+    },
     {
         name: 'Mike Liu',
         title: 'Software Engineer',
@@ -231,4 +235,4 @@ const AboutPage: React.FC<PageProps> = () => {
 
 export default AboutPage
 
-export const Head: HeadFC = () => <title>Home Page</title>
+export const Head: HeadFC = () => <SEO title="Focus - About" />
