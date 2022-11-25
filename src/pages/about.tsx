@@ -102,27 +102,27 @@ const team = [
     {
         name: 'Ant Addis',
         title: 'CEO',
-        photo: '/images/staff/anteneh-3.jpg',
+        photo: '/images/staff/anteneh-3.webp',
     },
     {
         name: 'Kolawole Balegun',
         title: 'Software Engineer',
-        photo: '/images/staff/kola.png',
+        photo: '/images/staff/kola.webp',
     },
     {
         name: 'Iverson Diles',
         title: 'Software Engineer',
-        photo: '/images/staff/iverson-diles.jpeg',
+        photo: '/images/staff/iverson-diles.webp',
     },
     {
         name: 'Sid Hackney',
         title: 'Software Engineer',
-        photo: '/images/staff/sid.jpeg',
+        photo: '/images/staff/sid.webp',
     },
     {
         name: 'Michael Kalish',
         title: 'CTO',
-        photo: '/images/staff/kalish-profile.png',
+        photo: '/images/staff/kalish-profile.webp',
     },
     {
         name: 'Bethlehem Mulugeta',
@@ -131,7 +131,7 @@ const team = [
     {
         name: 'Bruk Abebe',
         title: 'Software Engineer',
-        photo: '/images/staff/bruk-abebe.jpg',
+        photo: '/images/staff/bruk-abebe.webp',
     },
     {
         name: 'Eric Opoku',
@@ -140,7 +140,7 @@ const team = [
     {
         name: 'Kevon Paynter',
         title: 'Product Manager',
-        photo: '/images/staff/kevon.jpg',
+        photo: '/images/staff/kevon.webp',
     },
     {
         name: 'Mike Liu',
