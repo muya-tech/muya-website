@@ -146,6 +146,11 @@ const team = [
         name: 'Mike Liu',
         title: 'Software Engineer',
     },
+    {
+        name: 'Gabriel Dorsch',
+        title: 'Software Engineer',
+        photo: '/images/staff/gabriel.webp',
+    },
 ]
 
 const AboutPage: React.FC<PageProps> = () => {
