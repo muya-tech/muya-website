@@ -116,7 +116,7 @@ const projects = [
       description:
             'Building a next generation talent marketplace platform that uses well defined and industry aligned job competency maps to more accurately match job seekers with employers.',
       link: 'https://aspireability.io/',
-    },
+    }
 ]
 
 const tagToColor: any = {
