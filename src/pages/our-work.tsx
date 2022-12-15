@@ -100,23 +100,23 @@ const projects = [
         title: 'DC Housing Insights',
         tags: ['Equity'],
         description:
-            'Focus was part of the initial core team at project kickoff, and worked with our prime contracting partner (Nava) and other stakeholders to staff project teams across product, engineering, cloud infrastructure and operational/technical support.',
+            'Our staf was part of the initial core team at project kickoff and has since worked with stakeholders to provide technical and operational support while continuing to make improvements and updates to the project.',
         link: 'http://housinginsights.org/#',
     },
-    {
-        title: 'Marriott Learning Platform',
-        tags: ['Learning & Development'],
-        description:
-            'Focus was part of the initial core team at project kickoff, and worked with our prime contracting partner (Nava) and other stakeholders to staff project teams across product, engineering, cloud infrastructure and operational/technical support.',
-        link: 'https://www.marriott-ld.com/mda',
-    },
-    {
-        title: 'Skills-Based Talent Platform',
-        tags: ['Learning & Development'],
-        description:
-            'Focus was part of the initial core team at project kickoff, and worked with our prime contracting partner (Nava) and other stakeholders to staff project teams across product, engineering, cloud infrastructure and operational/technical support.',
-        link: 'https://aspireability.io/',
-    },
+    // {
+    //     title: 'Marriott Learning Platform',
+    //     tags: ['Learning & Development'],
+    //     description:
+    //         'Focus was part of the initial core team at project kickoff, and worked with our prime contracting partner (Nava) and other stakeholders to staff project teams across product, engineering, cloud infrastructure and operational/technical support.',
+    //     link: 'https://www.marriott-ld.com/mda',
+    // },
+    // {
+    //     title: 'Skills-Based Talent Platform',
+    //     tags: ['Learning & Development'],
+    //     description:
+    //         'Focus was part of the initial core team at project kickoff, and worked with our prime contracting partner (Nava) and other stakeholders to staff project teams across product, engineering, cloud infrastructure and operational/technical support.',
+    //     link: 'https://aspireability.io/',
+    // },
 ]
 
 const tagToColor: any = {
