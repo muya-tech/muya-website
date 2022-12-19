@@ -96,13 +96,13 @@ const projects = [
             'Our staff have experience in key engineering leadership roles HealthCare.gov and MyMedicare.gov projects. Currently supporting CMS cloud transformation projects.',
         link: '',
     },
-    // {
-    //   title: 'DC Housing Insights',
-    //   tags: ['Equity'],
-    //   description:
-    //         'This open source tool provides housing advocates and government officials with insights on the state of affordable housing in Washington, DC. The project started as a Code for DC / CNHED / Greater DC initiative. The tool overlays multiple local and national data sources on top of an interactive map with various filter toggles to better visualize the data.',
-    //   link: 'http://housinginsights.org/#',
-    // },
+    {
+        title: 'DC Housing Insights',
+        tags: ['Equity'],
+        description:
+            'This open source tool provides housing advocates and government officials with insights on the state of affordable housing in Washington, DC. The project started as a Code for DC / CNHED / Greater DC initiative. The tool overlays multiple local and national data sources on top of an interactive map with various filter toggles to better visualize the data.',
+        link: 'http://housinginsights.org/#',
+    },
     {
         title: 'Marriott Learning Platform',
         tags: ['Learning & Development'],
