@@ -98,6 +98,7 @@ const team = [
     {
         name: 'Eyuel Abebe',
         title: 'Software Engineer',
+        photo: '/images/staff/eyuel.webp',
     },
     {
         name: 'Ant Addis',
@@ -132,10 +133,6 @@ const team = [
         name: 'Bruk Abebe',
         title: 'Software Engineer',
         photo: '/images/staff/bruk-abebe.webp',
-    },
-    {
-        name: 'Eric Opoku',
-        title: 'Software Engineer',
     },
     {
         name: 'Kevon Paynter',
