@@ -148,6 +148,11 @@ const team = [
         title: 'Software Engineer',
         photo: '/images/staff/gabriel.webp',
     },
+    {
+        name: 'Jack Wang',
+        title: 'Software Engineer',
+        photo: '/images/staff/jack-wang.webp',
+    },
 ]
 
 const AboutPage: React.FC<PageProps> = () => {
