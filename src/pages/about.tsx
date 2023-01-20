@@ -149,6 +149,10 @@ const team = [
         photo: '/images/staff/gabriel.webp',
     },
     {
+        name: 'Thu Pham',
+        title: 'Software Engineer',
+    },
+    {
         name: 'Jack Wang',
         title: 'Software Engineer',
         photo: '/images/staff/jack-wang.webp',
