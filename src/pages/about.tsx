@@ -157,6 +157,11 @@ const team = [
         title: 'Software Engineer',
         photo: '/images/staff/jack-wang.webp',
     },
+    {
+        name: 'Kant Kodali',
+        title: 'Software Engineer',
+        photo: '/images/staff/kant_kodali.webp',
+    },
 ]
 
 const AboutPage: React.FC<PageProps> = () => {
