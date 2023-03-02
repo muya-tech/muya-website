@@ -130,11 +130,6 @@ const team = [
         title: 'Recruiting',
     },
     {
-        name: 'Bruk Abebe',
-        title: 'Software Engineer',
-        photo: '/images/staff/bruk-abebe.webp',
-    },
-    {
         name: 'Kevon Paynter',
         title: 'Product Manager',
         photo: '/images/staff/kevon.webp',
@@ -161,6 +156,11 @@ const team = [
         name: 'Kant Kodali',
         title: 'Software Engineer',
         photo: '/images/staff/kant_kodali.webp',
+    },
+    {
+        name: 'Jamie Albinson',
+        title: 'Software Engineer',
+        photo: '/images/staff/jamie-albinson.webp',
     },
 ]
 
