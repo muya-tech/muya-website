@@ -162,6 +162,11 @@ const team = [
         title: 'Software Engineer',
         photo: '/images/staff/jamie-albinson.webp',
     },
+    {
+        name: 'Logan Ricard',
+        title: 'Software Engineer',
+        photo: '/images/staff/logan-ricard.webp',
+    },
 ]
 
 const AboutPage: React.FC<PageProps> = () => {
