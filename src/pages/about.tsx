@@ -1,13 +1,20 @@
 import * as React from 'react'
 
-import { Avatar, Box, Button, SimpleGrid, Text } from '@chakra-ui/react'
+import {
+    Avatar,
+    Box,
+    Button,
+    Divider,
+    Heading,
+    SimpleGrid,
+    Text,
+} from '@chakra-ui/react'
 import { HeadFC, Link, PageProps } from 'gatsby'
 
 import Hero from '../layout/Hero'
 import Layout from '../layout/Layout'
 import { SEO } from '../components/seo'
 import Section from '../layout/Section'
-import { VscWorkspaceTrusted } from 'react-icons/vsc'
 
 const content = {
     heroTitle: 'About Us',
@@ -99,73 +106,100 @@ const team = [
         name: 'Eyuel Abebe',
         title: 'Software Engineer',
         photo: '/images/staff/eyuel.webp',
+        department: 'engineering',
     },
     {
         name: 'Ant Addis',
         title: 'CEO',
         photo: '/images/staff/anteneh-3.webp',
+        department: 'leadership',
     },
     {
         name: 'Kolawole Balegun',
         title: 'Software Engineer',
         photo: '/images/staff/kola.webp',
+        department: 'engineering',
     },
     {
         name: 'Iverson Diles',
         title: 'Software Engineer',
         photo: '/images/staff/iverson-diles.webp',
+        department: 'engineering',
     },
     {
         name: 'Sid Hackney',
         title: 'Software Engineer',
         photo: '/images/staff/sid.webp',
+        department: 'engineering',
     },
     {
         name: 'Michael Kalish',
         title: 'CTO',
         photo: '/images/staff/kalish-profile.webp',
+        department: 'leadership',
     },
     {
         name: 'Bethlehem Mulugeta',
         title: 'Recruiting',
+        department: 'support',
     },
     {
         name: 'Kevon Paynter',
         title: 'Product Manager',
         photo: '/images/staff/kevon.webp',
+        department: 'product',
     },
     {
         name: 'Mike Liu',
         title: 'Software Engineer',
+        department: 'engineering',
     },
     {
         name: 'Gabriel Dorsch',
         title: 'Software Engineer',
         photo: '/images/staff/gabriel.webp',
+        department: 'engineering',
     },
     {
         name: 'Thu Pham',
         title: 'Software Engineer',
+        department: 'engineering',
     },
     {
         name: 'Jack Wang',
         title: 'Software Engineer',
         photo: '/images/staff/jack-wang.webp',
+        department: 'engineering',
     },
     {
         name: 'Kant Kodali',
         title: 'Software Engineer',
         photo: '/images/staff/kant_kodali.webp',
+        department: 'engineering',
     },
     {
         name: 'Jamie Albinson',
         title: 'Software Engineer',
         photo: '/images/staff/jamie-albinson.webp',
+        department: 'engineering',
     },
     {
         name: 'Logan Ricard',
         title: 'Software Engineer',
         photo: '/images/staff/logan-ricard.webp',
+        department: 'engineering',
+    },
+    {
+        name: 'Carl Hicks',
+        title: 'Support Engineer',
+        photo: '/images/staff/carl-hicks.webp',
+        department: 'engineering',
+    },
+    {
+        name: 'Tshering Yudon',
+        title: 'Designer',
+        photo: '/images/staff/tshering-yudon.webp',
+        department: 'product',
     },
 ]
 
@@ -173,45 +207,196 @@ const AboutPage: React.FC<PageProps> = () => {
     const customRenderMap: any = {
         team: () => {
             return (
-                <Box>
-                    <SimpleGrid
-                        columns={{ base: 2, md: 4 }}
-                        mb={{ base: 12, md: 12 }}
-                        spacing="10"
-                    >
-                        {team.map((person) => {
-                            return (
-                                <Box>
-                                    <Avatar
-                                        name={person.name}
-                                        size={{ base: 'xl', md: '2xl' }}
-                                        mb={2}
-                                        src={person.photo}
-                                    />
-                                    <Text
-                                        fontSize={{ base: 'xl', md: '2xl' }}
-                                        fontWeight="semibold"
-                                        mb={1}
-                                    >
-                                        {person.name}
-                                    </Text>
-                                    <Text fontSize={{ base: 'lg', md: 'xl' }}>
-                                        {person.title}
-                                    </Text>
-                                </Box>
-                            )
-                        })}
-                    </SimpleGrid>
-                    <Button
-                        variant="solid"
-                        fontSize={{ base: '2xl', md: '2xl' }}
-                        colorScheme="blue"
-                        as={Link}
-                        to="/careers"
-                    >
-                        Join the Team
-                    </Button>
-                </Box>
+                <>
+                    <Box marginBottom="5">
+                        <Heading marginBottom="10">Leadership</Heading>
+                        <SimpleGrid
+                            columns={{ base: 2, md: 4 }}
+                            mb={{ base: 12, md: 12 }}
+                            spacing="10"
+                        >
+                            {team
+                                .filter(
+                                    (person) =>
+                                        person.department == 'leadership'
+                                )
+                                .map((person) => {
+                                    return (
+                                        <Box>
+                                            <Avatar
+                                                name={person.name}
+                                                size={{ base: 'xl', md: '2xl' }}
+                                                mb={2}
+                                                src={person.photo}
+                                            />
+                                            <Text
+                                                fontSize={{
+                                                    base: 'xl',
+                                                    md: '2xl',
+                                                }}
+                                                fontWeight="semibold"
+                                                mb={1}
+                                            >
+                                                {person.name}
+                                            </Text>
+                                            <Text
+                                                fontSize={{
+                                                    base: 'lg',
+                                                    md: 'xl',
+                                                }}
+                                            >
+                                                {person.title}
+                                            </Text>
+                                        </Box>
+                                    )
+                                })}
+                        </SimpleGrid>
+                        <Divider />
+                    </Box>
+                    <Box marginBottom="5">
+                        <Heading marginBottom="10">Product</Heading>
+                        <SimpleGrid
+                            columns={{ base: 2, md: 4 }}
+                            mb={{ base: 12, md: 12 }}
+                            spacing="10"
+                        >
+                            {team
+                                .filter(
+                                    (person) => person.department == 'product'
+                                )
+                                .sort((a, b) => a.name.localeCompare(b.name))
+                                .map((person) => {
+                                    return (
+                                        <Box>
+                                            <Avatar
+                                                name={person.name}
+                                                size={{ base: 'xl', md: '2xl' }}
+                                                mb={2}
+                                                src={person.photo}
+                                            />
+                                            <Text
+                                                fontSize={{
+                                                    base: 'xl',
+                                                    md: '2xl',
+                                                }}
+                                                fontWeight="semibold"
+                                                mb={1}
+                                            >
+                                                {person.name}
+                                            </Text>
+                                            <Text
+                                                fontSize={{
+                                                    base: 'lg',
+                                                    md: 'xl',
+                                                }}
+                                            >
+                                                {person.title}
+                                            </Text>
+                                        </Box>
+                                    )
+                                })}
+                        </SimpleGrid>
+                        <Divider />
+                    </Box>
+                    <Box marginBottom="5">
+                        <Heading marginBottom="10">Engineering</Heading>
+                        <SimpleGrid
+                            columns={{ base: 2, md: 4 }}
+                            mb={{ base: 12, md: 12 }}
+                            spacing="10"
+                        >
+                            {team
+                                .filter(
+                                    (person) =>
+                                        person.department == 'engineering'
+                                )
+                                .sort((a, b) => a.name.localeCompare(b.name))
+                                .map((person) => {
+                                    return (
+                                        <Box>
+                                            <Avatar
+                                                name={person.name}
+                                                size={{ base: 'xl', md: '2xl' }}
+                                                mb={2}
+                                                src={person.photo}
+                                            />
+                                            <Text
+                                                fontSize={{
+                                                    base: 'xl',
+                                                    md: '2xl',
+                                                }}
+                                                fontWeight="semibold"
+                                                mb={1}
+                                            >
+                                                {person.name}
+                                            </Text>
+                                            <Text
+                                                fontSize={{
+                                                    base: 'lg',
+                                                    md: 'xl',
+                                                }}
+                                            >
+                                                {person.title}
+                                            </Text>
+                                        </Box>
+                                    )
+                                })}
+                        </SimpleGrid>
+                        <Divider />
+                    </Box>
+                    <Box>
+                        <Heading marginBottom="10">Support</Heading>
+                        <SimpleGrid
+                            columns={{ base: 2, md: 4 }}
+                            mb={{ base: 12, md: 12 }}
+                            spacing="10"
+                        >
+                            {team
+                                .filter(
+                                    (person) => person.department == 'support'
+                                )
+                                .map((person) => {
+                                    return (
+                                        <Box>
+                                            <Avatar
+                                                name={person.name}
+                                                size={{ base: 'xl', md: '2xl' }}
+                                                mb={2}
+                                                src={person.photo}
+                                            />
+                                            <Text
+                                                fontSize={{
+                                                    base: 'xl',
+                                                    md: '2xl',
+                                                }}
+                                                fontWeight="semibold"
+                                                mb={1}
+                                            >
+                                                {person.name}
+                                            </Text>
+                                            <Text
+                                                fontSize={{
+                                                    base: 'lg',
+                                                    md: 'xl',
+                                                }}
+                                            >
+                                                {person.title}
+                                            </Text>
+                                        </Box>
+                                    )
+                                })}
+                        </SimpleGrid>
+                        <Button
+                            variant="solid"
+                            fontSize={{ base: '2xl', md: '2xl' }}
+                            colorScheme="blue"
+                            as={Link}
+                            to="/careers"
+                        >
+                            Join the Team
+                        </Button>
+                    </Box>
+                </>
             )
         },
         expertise: () => {
