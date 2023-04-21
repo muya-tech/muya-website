@@ -76,19 +76,19 @@ const team = [
     {
       name: 'Anteneh Addis',
       title: 'Digital Strategy',
-      photo: '/images/staff/anteneh-3.jpg',
+      photo: '/images/staff/anteneh-3.png',
       department: 'leadership',
     },
     {
       name: 'Groum Tefera Wolde',
       title: 'Upskilling Strategy / Investor',
-      photo: '/images/staff/anteneh-3.webp',
+      photo: '/images/staff/anteneh-3.png',
       department: 'advisor',
     },
     {
       name: 'Daniel Leul',
       title: 'Business Strategy / Investor',
-      photo: '/images/staff/anteneh-3.webp',
+      photo: '/images/staff/anteneh-3.png',
       department: 'advisor',
     },
 ]
