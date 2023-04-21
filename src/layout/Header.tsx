@@ -7,7 +7,7 @@ import {
     Container,
     Flex,
     HStack,
-    Heading,
+    Image,
     IconButton,
     Menu,
     MenuButton,
@@ -15,6 +15,7 @@ import {
     MenuItem,
     MenuList,
     Text,
+    Heading,
     useBreakpointValue,
     useColorModeValue,
 } from '@chakra-ui/react'
@@ -24,6 +25,7 @@ import Helmet from 'react-helmet'
 import { Link } from 'gatsby'
 
 const content = {
+    logoText: 'Muya / ሙያ',
     nav: [
         {
             title: 'About',
@@ -53,13 +55,17 @@ const Header = () => {
                 >
                     <HStack spacing="20" justify="space-between">
                         <Link to="/">
-                            <Heading
+                            {/* <Heading
                                 fontSize={{ base: '4xl', md: '5xl' }}
                                 fontWeight="extrabold"
-                                color="red.600"
+                                color="green.600"
                             >
-                                focus
-                            </Heading>
+                                {content.logoText}
+                            </Heading> */}
+                            <Image
+                              src="/images/muya-logo-background.png"
+                              height={{ base: '50px', md: '75px' }}
+                            />
                         </Link>
                         {isDesktop ? (
                             <ButtonGroup variant="link" spacing="7">

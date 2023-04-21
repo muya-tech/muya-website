@@ -39,4 +39,4 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage
 
-export const Head: HeadFC = () => <SEO title="Focus - Contact" />
+export const Head: HeadFC = () => <SEO title="Muya - Contact" />

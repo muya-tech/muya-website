@@ -2,6 +2,7 @@ import * as React from 'react'
 
 import {
     Box,
+    Button,
     HStack,
     Heading,
     Icon,
@@ -14,13 +15,13 @@ import {
 import { FaEquals, FaExternalLinkAlt } from 'react-icons/fa'
 import { HeadFC, PageProps } from 'gatsby'
 import {
-    MdBabyChangingStation,
+    MdComputer,
     MdLocalHospital,
     MdOutlineDesignServices,
     MdOutlineSchool,
     MdScreenSearchDesktop,
 } from 'react-icons/md'
-
+import { RiCustomerServiceLine } from 'react-icons/ri'
 import Hero from '../layout/Hero'
 import Layout from '../layout/Layout'
 import { SEO } from '../components/seo'
@@ -29,34 +30,34 @@ import Section from '../layout/Section'
 const content = {
     heroTitle: 'Our Work',
     heroDescription:
-        'We focus on projects with social impact. Success means people with better health, increased access to benefits to underserved communities, and better upskilling and job opportunities for disadvantaged communities.',
+        'Ready to see how Muya can help you achieve your digital goals? Check out our focus areas and expertise, and contact us to schedule a consultation.',
     sections: [
         {
-            title: 'Focus on Social Impact',
+            title: 'Focus Areas',
             description: 'Our areas of focus reflect our values and expertise.',
-            items: [
+            items: [                
                 {
-                    title: 'Equity',
-                    description:
-                        'Enabling access to under-served and disadvantaged communities.',
-                    icon: FaEquals,
+                  title: 'Digital Transformation',
+                  description:
+                      'Helping support large digital transformation projects in growing economies.',
+                  icon: MdComputer,
                 },
                 {
-                    title: 'Integrated Benefits',
+                    title: 'Government Services',
                     description:
-                        'Using digital services to make existing benefits services faster and more accessible.',
-                    icon: MdBabyChangingStation,
+                        'Using digital services to make existing benefits services digital and more accessible.',
+                    icon: RiCustomerServiceLine,
                 },
                 {
-                    title: 'Healthcare',
-                    description:
-                        'Addressing the vast US healthcare space through federal, local and commercial projects.',
-                    icon: MdLocalHospital,
-                },
+                  title: 'Equity',
+                  description:
+                      'Enabling access to under-served and disadvantaged communities.',
+                  icon: FaEquals,
+                },              
                 {
                     title: 'Learning & Development',
                     description:
-                        'Emphasis on projects that enable upward mobility in under-served communities.',
+                        'Emphasis on projects that enable upskilling and better jobs for communities.',
                     icon: MdOutlineSchool,
                 },
             ],
@@ -64,12 +65,50 @@ const content = {
             fontColor: 'white',
         },
         {
-            title: 'Projects',
-            description:
-                'We work across diverse industries and government to provide our deep expertise in digital services.',
-            backgroundColor: 'gray.50',
-            customId: 'projects',
-        },
+          title: 'Expertise',
+          items: [
+              {
+                  title: 'Software Engineering',
+                  description:
+                      'We bring deep expertise in full-stack web development using agile development processes. Our staff have successfully built and maintained high complexity applications serving millions of users.',
+              },
+              {
+                  title: 'Research & Design ',
+                  description:
+                      'We center our work on human-centered design and research to gain deep insights into user challenges and needs. We use user research and testing before and after feature launches to gain insights and make our work more valuable.',
+              },
+              {
+                  title: 'Data Engineering',
+                  description:
+                      'Our teams have strong experience processing, transforming, integrating, and synthesizing large volumes of diverse data sets. We have a depth of experience working with healthcare data across government, insurers, and hospitals.',
+              },
+              {
+                  title: 'Product Management',
+                  description:
+                      'Our product managers work with their design and research colleagues to understand customer needs, work with our stakeholders, and craft high value solutions. We make data-driven product decisions by defining and tracking success metrics within an agile development approach.',
+              },
+              {
+                  title: 'DevOps & Cloud Infrastructure',
+                  description:
+                      'We develop and improve robust CI/CD processes that free up developers to focus on providing user value, accessibility, and privacy. We work across the cloud ecosystem (AWS, Azure, Google Cloud). We use infrastructure as code approach to consistently define our cloud resources with automated deploys.',
+              },
+              {
+                  title: 'Project & Program Management',
+                  description:
+                      'Our project managers tie everything together by supporting our planning, stakeholder coordination, and delivery work. We use strong documentation and communication practices to work efficiently in an increasingly distributed world.',
+              },
+          ],
+          // backgroundColor: 'orange.300',
+          // customId: 'expertise',
+          anchor: 'expertise',
+      },
+        // {
+        //     title: 'Projects',
+        //     description:
+        //         'We work across diverse industries and government to provide our deep expertise in digital services.',
+        //     backgroundColor: 'gray.50',
+        //     customId: 'projects',
+        // },
     ],
 }
 
@@ -142,53 +181,66 @@ const tagToColor: any = {
 
 const AboutPage: React.FC<PageProps> = () => {
     const customRenderMap: any = {
-        projects: () => {
-            return projects.map((project) => {
-                return (
-                    <Box mb={{ base: 8, md: 12 }}>
-                        <HStack spacing="3">
-                            {project.tags.map((tag) => (
-                                <Tag
-                                    variant="subtle"
-                                    colorScheme={tagToColor[tag]}
-                                >
-                                    {tag}
-                                </Tag>
-                            ))}
-                        </HStack>
-                        <Heading
-                            fontSize={{ base: '3xl', md: '4xl' }}
-                            fontWeight="extrabold"
-                            mb={{ base: 1, md: 2 }}
-                        >
-                            {project.title}{' '}
-                            {project.link && (
-                                <IconButton
-                                    aria-label="See link"
-                                    icon={<Icon as={FaExternalLinkAlt} />}
-                                    as={Link}
-                                    isExternal
-                                    href={project.link}
-                                    variant="link"
-                                />
-                            )}
-                        </Heading>
-                        {Array.isArray(project.description) ? (
-                            <Stack
-                                direction="column"
-                                spacing={{ base: 6, md: 6 }}
-                            >
-                                {project.description.map((paragraph) => (
-                                    <Text fontSize="xl">{paragraph}</Text>
-                                ))}
-                            </Stack>
-                        ) : (
-                            <Text fontSize="xl">{project.description}</Text>
-                        )}
-                    </Box>
-                )
-            })
-        },
+    //   expertise: () => {
+    //     return (
+    //         <Button
+    //             variant="solid"
+    //             fontSize={{ base: '2xl', md: '2xl' }}
+    //             colorScheme="blue"
+    //             as={Link}
+    //             to="/our-work"
+    //         >
+    //             See Examples of Our Work
+    //         </Button>
+    //     )
+    // },
+        // projects: () => {
+        //     return projects.map((project) => {
+        //         return (
+        //             <Box mb={{ base: 8, md: 12 }}>
+        //                 <HStack spacing="3">
+        //                     {project.tags.map((tag) => (
+        //                         <Tag
+        //                             variant="subtle"
+        //                             colorScheme={tagToColor[tag]}
+        //                         >
+        //                             {tag}
+        //                         </Tag>
+        //                     ))}
+        //                 </HStack>
+        //                 <Heading
+        //                     fontSize={{ base: '3xl', md: '4xl' }}
+        //                     fontWeight="extrabold"
+        //                     mb={{ base: 1, md: 2 }}
+        //                 >
+        //                     {project.title}{' '}
+        //                     {project.link && (
+        //                         <IconButton
+        //                             aria-label="See link"
+        //                             icon={<Icon as={FaExternalLinkAlt} />}
+        //                             as={Link}
+        //                             isExternal
+        //                             href={project.link}
+        //                             variant="link"
+        //                         />
+        //                     )}
+        //                 </Heading>
+        //                 {Array.isArray(project.description) ? (
+        //                     <Stack
+        //                         direction="column"
+        //                         spacing={{ base: 6, md: 6 }}
+        //                     >
+        //                         {project.description.map((paragraph) => (
+        //                             <Text fontSize="xl">{paragraph}</Text>
+        //                         ))}
+        //                     </Stack>
+        //                 ) : (
+        //                     <Text fontSize="xl">{project.description}</Text>
+        //                 )}
+        //             </Box>
+        //         )
+        //     })
+        // },
     }
 
     return (
@@ -205,6 +257,8 @@ const AboutPage: React.FC<PageProps> = () => {
                         backgroundColor={section.backgroundColor}
                         fontColor={section.fontColor}
                         items={section.items}
+                        customId={section.customId}
+                        anchor={section.anchor}
                     >
                         {section.customId &&
                             customRenderMap[section.customId]()}
@@ -217,4 +271,4 @@ const AboutPage: React.FC<PageProps> = () => {
 
 export default AboutPage
 
-export const Head: HeadFC = () => <SEO title="Focus - Our Work" />
+export const Head: HeadFC = () => <SEO title="Muya - Our Work" />

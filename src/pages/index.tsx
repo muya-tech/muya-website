@@ -9,12 +9,12 @@ import { SEO } from '../components/seo'
 import Section from '../layout/Section'
 
 const content = {
-    heroTitle: 'Build Better Software',
+    heroTitle: 'Empower Your Digital Future',
     heroDescription:
-        'We help government and industry partners build human-centered, high value, and highly maintainable digital services at scale.',
-    sectionTitle: 'Human-Centered, Focused on Value',
+        'Drive your digital success with Muya\'s comprehensive suite of modern technology solutions and expert staff augmentation services.',
+    sectionTitle: 'Focus on Competencies',
     sectionDescription:
-        'We focus our work on identifying user needs, improving usability, and delivering valuable outcomes for our clients.',
+        'We bring together a diverse set of technology staff with vetted competencies for the job at hand. Our culture is rooted in delivering valuable outcomes for our clients',
     nav: [
         {
             title: 'About Us',

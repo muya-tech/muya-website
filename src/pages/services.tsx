@@ -6,6 +6,7 @@ import { HeadFC, Link, PageProps } from 'gatsby'
 import {
     MdBabyChangingStation,
     MdLocalHospital,
+    MdWorkOutline,
     MdOutlineDesignServices,
     MdOutlineSchool,
     MdScreenSearchDesktop,
@@ -44,6 +45,11 @@ const content = {
                     description: 'Program, Product & Project Management',
                     icon: MdScreenSearchDesktop,
                 },
+                {
+                  title: 'Job Market Readiness',
+                  description: 'Internships and Apprenticeships',
+                  icon: MdWorkOutline,
+              },
             ],
             backgroundColor: 'blue.700',
             fontColor: 'white',
@@ -57,30 +63,30 @@ const content = {
             // fontColor: 'white',
             items: [
                 {
-                    title: 'Federal Government',
+                    title: 'National Government',
                     description:
                         'We bring our diverse technology expertise to modern digital services in the federal government.',
                     icon: GiCongress,
                     iconColor: 'green.700',
                 },
                 {
-                    title: 'Local & State Government',
+                    title: 'Local Government',
                     description:
-                        'We strive to bring our experience in building benefits, equity and healthcare systems to similar initiatives in other cities and states.',
+                        'We strive to bring our experience in building benefits, equity and healthcare systems to similar initiatives in other cities and localities.',
                     icon: TbBuildingBank,
                     iconColor: 'green.700',
                 },
                 {
                     title: 'Industry',
                     description:
-                        'Our staff bring diverse experience working in various industries including healthcare, early education, higher and corporate education, finance.',
+                        'Our staff bring diverse experience working in various industries including healthcare, early education, higher and corporate education, and finance.',
                     icon: TbBuilding,
                     iconColor: 'green.700',
                 },
                 {
                     title: 'Non-Profits & Civic Tech',
                     description:
-                        'We have continued our teams dedication to supporting and participating in local civic tech and open source communities.',
+                        'We have continued our team\'s dedication to supporting and participating in local civic tech and open source communities.',
                     icon: FiHeart,
                     iconColor: 'green.700',
                 },
@@ -104,11 +110,11 @@ const AboutPage: React.FC<PageProps> = () => {
                         fontSize={{ base: '2xl', md: '2xl' }}
                         colorScheme="teal"
                         as={Link}
-                        to="/about#expertise"
+                        to="/our-work#expertise"
                     >
                         Learn About Our Expertise
                     </Button>
-                    <Button
+                    {/* <Button
                         variant="solid"
                         fontSize={{ base: '2xl', md: '2xl' }}
                         colorScheme="teal"
@@ -116,7 +122,7 @@ const AboutPage: React.FC<PageProps> = () => {
                         to="/our-work"
                     >
                         Examples of Our Work
-                    </Button>
+                    </Button> */}
                 </Stack>
             )
         },
@@ -132,32 +138,30 @@ const AboutPage: React.FC<PageProps> = () => {
                         </Heading>
                         <Stack>
                             <Text fontSize="xl">
-                                <b>DUNS #</b>: 117371487
-                            </Text>
-                            <Text fontSize="xl">
-                                <b>UEI #</b>: DKGMKCMALNW6
-                            </Text>
-                            <Text fontSize="xl">
-                                <b>CAGE CODE</b>: 8PXE3
+                                <b>Tax #</b>: 123456
                             </Text>
                         </Stack>
                     </Box>
                     <Box>
                         <Heading fontSize="3xl" mb={4}>
-                            NAICS Codes
+                            Regions we Serve
                         </Heading>
                         <Stack>
                             <Text fontSize="xl">
-                                <b>541511</b>: Custom Computer Programming
-                                Services
+                                East Africa
                             </Text>
                             <Text fontSize="xl">
-                                <b>541512</b>: Computer Systems Design Services
+                                Middle East
                             </Text>
-                            <Text fontSize="xl"></Text>
+                            <Text fontSize="xl">
+                                Europe
+                            </Text>
+                            <Text fontSize="xl">
+                                North America
+                            </Text>
                         </Stack>
                     </Box>
-                    <Box>
+                    {/* <Box>
                         <Heading fontSize="3xl" mb={4}>
                             Certifications
                         </Heading>
@@ -169,7 +173,7 @@ const AboutPage: React.FC<PageProps> = () => {
                                 Massachusets Minority Small Business
                             </Text>
                         </Stack>
-                    </Box>
+                    </Box> */}
                 </SimpleGrid>
             )
         },
@@ -215,4 +219,4 @@ const AboutPage: React.FC<PageProps> = () => {
 
 export default AboutPage
 
-export const Head: HeadFC = () => <SEO title="Focus - Services" />
+export const Head: HeadFC = () => <SEO title="Muya - Services" />

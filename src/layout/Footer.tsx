@@ -8,6 +8,7 @@ import {
   Divider,
   IconButton,
   Text,
+  Image,
   useBreakpointValue,
   useColorModeValue,
 } from '@chakra-ui/react'
@@ -16,9 +17,10 @@ import * as React from 'react'
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 const content = {
+  logoText: 'ሙያ / Muya',
   contactText:'Get In Touch',
   contactButton: 'Contact',
-  tagLine: 'Build Better Software',
+  tagLine: 'Digital Talent for the Future',
   nav: [
     {
       title: 'Home',
@@ -36,15 +38,15 @@ const content = {
       title: 'Our Work',
       path: '/our-work',
     },
-    {
-      title: 'Careers',
-      path: '/careers',
-    },
+    // {
+    //   title: 'Careers',
+    //   path: '/careers',
+    // },
   ],
-  businessName: 'Focus Consulting, LLC',
-  businessAddress1: '1629 K St NW Suite 300',
-  businessAddress2: 'Washington, DC 20006',
-  copyright: 'Focus Consulting, LLC. All rights reserved.',
+  businessName: 'Muya Technology PLC',
+  businessAddress1: 'ZYX Building #227, Bole Sub City',
+  businessAddress2: 'Addis Ababa, Ethiopia',
+  copyright: 'Muya Technology PLC. All rights reserved.',
 }
 
 const Footer = () => {
@@ -69,7 +71,7 @@ const Footer = () => {
             justify="space-between"            
           >
             <Stack spacing={{ base: 1, md: 2 }} align="start">
-              <Heading fontSize="3xl" fontWeight="extrabold" color="red.600">focus</Heading>
+              <Heading fontSize="3xl" fontWeight="extrabold" color="green.600">{content.logoText}</Heading>
               <Text fontSize="lg" color="muted">{content.tagLine}</Text>
             </Stack>
             <Stack
@@ -92,7 +94,7 @@ const Footer = () => {
                 )
               })}
             </Stack>
-            <ButtonGroup variant="ghost">
+            {/* <ButtonGroup variant="ghost">
               <IconButton
                 as="a"
                 href="https://www.linkedin.com/company/35654054/admin/"
@@ -100,7 +102,7 @@ const Footer = () => {
                 aria-label="LinkedIn"
                 icon={<FaLinkedin fontSize="1.25rem" />}
               />
-            </ButtonGroup>        
+            </ButtonGroup>         */}
           </Stack>
           <Stack spacing={{ base: 1, md: 2 }} align="start">
             <Text fontSize="sm">{content.businessName}</Text>

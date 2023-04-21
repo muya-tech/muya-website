@@ -2,10 +2,10 @@ import type { GatsbyConfig } from 'gatsby'
 
 const config: GatsbyConfig = {
     siteMetadata: {
-        title: `Focus - Build Better Software`,
-        siteUrl: `https://focusconsulting.io`,
+        title: `Muya - Digital Talent for the Future`,
+        siteUrl: `https://muyatechnology.com`,
         description:
-            'We help government and industry partners build human-centered, high value, and highly maintainable digital services at scale.',
+            'Helping create the technology talent for the future of work.',
     },
     // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
     // If you use VSCode you can also use the GraphQL plugin

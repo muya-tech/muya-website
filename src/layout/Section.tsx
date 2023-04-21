@@ -9,6 +9,7 @@ import {
   Text,
   useBreakpointValue,
   useColorModeValue,
+  VStack,
 } from '@chakra-ui/react'
 import * as React from 'react'
 import { FiMenu } from 'react-icons/fi'
@@ -16,7 +17,7 @@ import { Icon } from '@chakra-ui/react'
 
 interface MainProps {
   title: string,
-  description?: string,
+  description?: string | string[],
   items?: { title: string, description: string, icon? : any, iconColor?: string }[], 
   backgroundColor?: string,
   fontColor?: string,
@@ -57,6 +58,18 @@ const Section = ({ title, description, items, backgroundColor, fontColor, anchor
     });
   }
 
+  const renderDescription = (description: string | string[]) => {
+    if (Array.isArray(description)) {      
+      return (
+        <VStack gap={3}>
+          {description.map((para: string) => <Text fontSize={{ base: 'lg', md: 'xl' }} color="muted">{para}</Text>)}
+        </VStack>
+      )
+    }
+
+    <Text fontSize={{ base: 'lg', md: 'xl' }} color="muted">{description}</Text>
+  }
+
   return (    
     <Box
       as="section"
@@ -66,7 +79,7 @@ const Section = ({ title, description, items, backgroundColor, fontColor, anchor
       <Container maxW="6xl" px={{ base: 5, md: 0 }}>
         <Box width={{ base: '100%', md: '75%' }} mb={{ base: 8, md: 12}}>
           <Heading fontSize={{ base: '4xl', md: '5xl' }} fontWeight="extrabold" mb={{ base: 1, md: 2}}>{title}</Heading>
-          {description && <Text fontSize={{ base: 'lg', md: 'xl' }} color="muted">{description}</Text>}          
+          {description && renderDescription(description)}          
         </Box>
         {items && (
           <Box mb={{ base: 8, md: 12}}>
