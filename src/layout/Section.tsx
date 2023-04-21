@@ -67,7 +67,9 @@ const Section = ({ title, description, items, backgroundColor, fontColor, anchor
       )
     }
 
-    <Text fontSize={{ base: 'lg', md: 'xl' }} color="muted">{description}</Text>
+    return (
+      <Text fontSize={{ base: 'lg', md: 'xl' }} color="muted">{description}</Text>
+    )
   }
 
   return (    
