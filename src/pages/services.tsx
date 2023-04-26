@@ -138,7 +138,7 @@ const AboutPage: React.FC<PageProps> = () => {
                         </Heading>
                         <Stack>
                             <Text fontSize="xl">
-                                <b>Tax #</b>: 123456
+                                <b>Tax #</b>: 0084253976
                             </Text>
                         </Stack>
                     </Box>

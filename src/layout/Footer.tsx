@@ -44,7 +44,7 @@ const content = {
     // },
   ],
   businessName: 'Muya Technology PLC',
-  businessAddress1: 'ZYX Building #227, Bole Sub City',
+  businessAddress1: 'Bole Sub-city - Sintayehu Belay Building - 2nd Floor (In front of Saay Pastry)',
   businessAddress2: 'Addis Ababa, Ethiopia',
   copyright: 'Muya Technology PLC. All rights reserved.',
 }

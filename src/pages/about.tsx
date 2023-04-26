@@ -82,13 +82,19 @@ const team = [
     {
       name: 'Groum Tefera Wolde',
       title: 'Upskilling Strategy / Investor',
-      photo: '/images/staff/anteneh-3.png',
+      photo: '/images/staff/groum-profile.png',
       department: 'advisor',
     },
     {
       name: 'Daniel Leul',
       title: 'Business Strategy / Investor',
-      photo: '/images/staff/anteneh-3.png',
+      photo: '/images/staff/danny-profile.png',
+      department: 'advisor',
+    },
+    {
+      name: 'Mehrteab Leul',
+      title: 'Investor',
+      photo: '/images/staff/Mehrteab-Leul-profile.png',
       department: 'advisor',
     },
 ]
