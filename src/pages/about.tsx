@@ -8,8 +8,11 @@ import {
     Heading,
     SimpleGrid,
     Text,
+    Link,
+    Icon
 } from '@chakra-ui/react'
-import { HeadFC, Link, PageProps } from 'gatsby'
+import { HeadFC, PageProps } from 'gatsby'
+import { FaLinkedin } from 'react-icons/fa'
 
 import Hero from '../layout/Hero'
 import Layout from '../layout/Layout'
@@ -72,12 +75,14 @@ const team = [
         title: 'General Manager',
         photo: '/images/staff/sammy-profile.png',
         department: 'leadership',
+        linkedin: 'https://www.linkedin.com/in/samuelhailemariam',
     },
     {
       name: 'Anteneh Addis',
       title: 'Digital Strategy',
       photo: '/images/staff/anteneh-3.png',
       department: 'leadership',
+      linkedin: 'https://www.linkedin.com/in/anteneh-addis-98bb5128',
     },
     {
       name: 'Groum Tefera Wolde',
@@ -96,104 +101,76 @@ const team = [
       title: 'Investor',
       photo: '/images/staff/Mehrteab-Leul-profile.png',
       department: 'advisor',
+      linkedin: 'https://www.linkedin.com/in/mehrteab-leul-kokeb',
     },
 ]
 
 const AboutPage: React.FC<PageProps> = () => {
+  const renderTeam = (teamName: string, teamFilter: string) => {
+    return (
+      <Box marginBottom="5">
+        <Heading marginBottom="10">{teamName}</Heading>
+        <SimpleGrid
+            columns={{ base: 2, md: 4 }}
+            mb={{ base: 12, md: 12 }}
+            spacing="10"
+        >
+            {team
+                .filter(
+                    (person) =>
+                        person.department === teamFilter
+                )
+                .map((person) => {
+                    return (
+                        <Box>
+                            <Avatar
+                                name={person.name}
+                                size={{ base: 'xl', md: '2xl' }}
+                                mb={2}
+                                src={person.photo}
+                            />
+                            {person.linkedin ? (
+                              <Link href={person.linkedin} isExternal={true}>
+                                <Text
+                                  fontSize={{
+                                      base: 'xl',
+                                      md: '2xl',
+                                  }}
+                                  fontWeight="semibold"
+                                  textDecoration="underline"
+                                  mb={1}
+                                >
+                                  { person.name}                                    
+                                </Text>
+                                <Icon as={FaLinkedin} />
+                              </Link>                              
+                            ) : (    
+                              <Text
+                                fontSize={{
+                                    base: 'xl',
+                                    md: '2xl',
+                                }}
+                                fontWeight="semibold"
+                                mb={1}
+                              >
+                                  { person.name}
+                              </Text>                          
+                            )}
+                        </Box>
+                    )
+                })}
+        </SimpleGrid>
+        <Divider />
+    </Box>
+    )
+  }
+
     const customRenderMap: any = {
         team: () => {
             return (
                 <>
-                    <Box marginBottom="5">
-                        <Heading marginBottom="10">Leadership</Heading>
-                        <SimpleGrid
-                            columns={{ base: 2, md: 4 }}
-                            mb={{ base: 12, md: 12 }}
-                            spacing="10"
-                        >
-                            {team
-                                .filter(
-                                    (person) =>
-                                        person.department == 'leadership'
-                                )
-                                .map((person) => {
-                                    return (
-                                        <Box>
-                                            <Avatar
-                                                name={person.name}
-                                                size={{ base: 'xl', md: '2xl' }}
-                                                mb={2}
-                                                src={person.photo}
-                                            />
-                                            <Text
-                                                fontSize={{
-                                                    base: 'xl',
-                                                    md: '2xl',
-                                                }}
-                                                fontWeight="semibold"
-                                                mb={1}
-                                            >
-                                                {person.name}
-                                            </Text>
-                                            <Text
-                                                fontSize={{
-                                                    base: 'lg',
-                                                    md: 'xl',
-                                                }}
-                                            >
-                                                {person.title}
-                                            </Text>
-                                        </Box>
-                                    )
-                                })}
-                        </SimpleGrid>
-                        <Divider />
-                    </Box>
-                    <Box marginBottom="5">
-                        <Heading marginBottom="10">Advisors</Heading>
-                        <SimpleGrid
-                            columns={{ base: 2, md: 4 }}
-                            mb={{ base: 12, md: 12 }}
-                            spacing="10"
-                        >
-                            {team
-                                .filter(
-                                    (person) => person.department == 'advisor'
-                                )
-                                .sort((a, b) => a.name.localeCompare(b.name))
-                                .map((person) => {
-                                    return (
-                                        <Box>
-                                            <Avatar
-                                                name={person.name}
-                                                size={{ base: 'xl', md: '2xl' }}
-                                                mb={2}
-                                                src={person.photo}
-                                            />
-                                            <Text
-                                                fontSize={{
-                                                    base: 'xl',
-                                                    md: '2xl',
-                                                }}
-                                                fontWeight="semibold"
-                                                mb={1}
-                                            >
-                                                {person.name}
-                                            </Text>
-                                            <Text
-                                                fontSize={{
-                                                    base: 'lg',
-                                                    md: 'xl',
-                                                }}
-                                            >
-                                                {person.title}
-                                            </Text>
-                                        </Box>
-                                    )
-                                })}
-                        </SimpleGrid>
-                        <Divider />
-                    </Box>
+                  {renderTeam('Leadership', 'leadership')}
+                  {renderTeam('Advisors', 'advisor')}
                 </>
             )
         },        
