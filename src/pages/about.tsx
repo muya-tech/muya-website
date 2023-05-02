@@ -28,7 +28,8 @@ const content = {
             title: 'Our Story',
             description: [
               "Founded in 2022 by a team of industry experts in software development and technical leadership, Muya brings years of experience from the US, UK, and Finland markets. Our founders' background includes architecting & implementing large scale US government applications, managing multiple cross-functional project teams and running a growing digital services firm.",
-              "This wealth of expertise and knowledge forms the backbone of our programs. At Muya, we're passionate about creating opportunities for talented individuals to succeed in the talent market of tomorrow."
+              "This wealth of expertise and knowledge forms the backbone of our programs. At Muya, we're passionate about creating opportunities for talented individuals to succeed in the talent market of tomorrow.",
+              "Muya (ሙያ) is an Amharic word that translates to 'talent' or 'profession', and accurately captures our dual mission of providing best-in-class talent services and providing pathways for our staff to upskill and grow in the digital age."
             ],                
             backgroundColor: 'blue.700',
             fontColor: 'white',
