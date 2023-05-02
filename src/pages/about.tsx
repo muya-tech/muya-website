@@ -85,7 +85,7 @@ const team = [
       linkedin: 'https://www.linkedin.com/in/anteneh-addis-98bb5128',
     },
     {
-      name: 'Groum Tefera Wolde',
+      name: 'Groum Tefera',
       title: 'Upskilling Strategy / Investor',
       photo: '/images/staff/groum-profile.png',
       department: 'advisor',
@@ -142,19 +142,23 @@ const AboutPage: React.FC<PageProps> = () => {
                                 >
                                   { person.name}                                    
                                 </Text>
+                                <Text>{person.title}</Text>
                                 <Icon as={FaLinkedin} />
                               </Link>                              
-                            ) : (    
-                              <Text
-                                fontSize={{
-                                    base: 'xl',
-                                    md: '2xl',
-                                }}
-                                fontWeight="semibold"
-                                mb={1}
-                              >
-                                  { person.name}
-                              </Text>                          
+                            ) : (
+                              <>
+                                <Text
+                                  fontSize={{
+                                      base: 'xl',
+                                      md: '2xl',
+                                  }}
+                                  fontWeight="semibold"
+                                  mb={1}
+                                >
+                                    { person.name}
+                                </Text>
+                                <Text>{person.title}</Text>
+                              </>                                                        
                             )}
                         </Box>
                     )
